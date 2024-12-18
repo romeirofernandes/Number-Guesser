@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gumber Nuesser</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Bricolage Grotesque", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800 text-gray-200 font-sans"
+  >
+    <div
+      id="wrapper"
+      class="relative bg-gray-800/80 p-8 rounded-lg shadow-lg max-w-md w-full border border-purple-500 backdrop-blur-sm"
+    >
+      <div class="absolute inset-0 bg-purple-950 opacity-10 rounded-lg"></div>
+      <h1
+        class="font-serif text-4xl font-bold mb-6 text-center text-amber-400 relative z-10"
+      >
+        Number Guesser
+      </h1>
+      <p class="text-lg mb-2 relative z-10">
+        Guess a random number between 1 and 100
+      </p>
+      <p class="text-lg mb-6 relative z-10">You have 10 attempts...</p>
+      <form class="form space-y-4 mb-6 relative z-10">
+        <label for="guessField" id="guess" class="block text-lg font-medium"
+          >Guess a number</label
+        >
+        <input
+          type="text"
+          id="guessField"
+          class="guessField w-full px-3 py-2 bg-gray-700 text-gray-200 rounded-md border border-purple-500 focus:outline-none focus:border-amber-400 transition-colors"
+        />
+        <input
+          type="submit"
+          id="subt"
+          value="Submit guess"
+          class="guessSubmit w-full bg-amber-500 text-gray-900 py-2 px-4 rounded-md hover:bg-amber-400 transition-colors cursor-pointer font-medium"
+        />
+      </form>
+
+      <div class="resultParas space-y-2 relative z-10">
+        <p class="border-t border-purple-500 pt-4">
+          Previous Guesses: <span class="guesses font-medium"></span>
+        </p>
+        <p>Guesses Remaining: <span class="lastResult font-medium">10</span></p>
+        <p class="lowOrHi text-amber-400 font-medium"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
